@@ -43,7 +43,7 @@ class PlanetListViewController: UITableViewController {
         let index = indexPath.row
         cell.textLabel?.text = planet.name
         cell.imageView?.image = UIImage(named: planet.imageName)
-        cell.detailTextLabel?.text = String(index)
+        cell.detailTextLabel?.text = String(index + 1)
         return cell
         
     }
@@ -54,7 +54,6 @@ class PlanetListViewController: UITableViewController {
        // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "toPlanetDetail" {
-            
             let index = tableView.indexPathForSelectedRow?.row
             let planet = PlanetController.planets[index!]
             let planetDetailViewController = segue.destinationViewController as! PlanetDetailViewController
