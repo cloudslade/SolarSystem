@@ -48,6 +48,20 @@ class PlanetListViewController: UITableViewController {
         
     }
     
+    // MARK: - Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "toPlanetDetail" {
+            
+            let index = tableView.indexPathForSelectedRow?.row
+            let planet = PlanetController.planets[index!]
+            let planetDetailViewController = segue.destinationViewController as! PlanetDetailViewController
+            _ = planetDetailViewController.view
+            planetDetailViewController.updateWithPlanet(planet)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

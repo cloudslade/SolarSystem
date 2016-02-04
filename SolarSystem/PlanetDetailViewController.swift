@@ -18,8 +18,6 @@ class PlanetDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateWithPlanet(PlanetController.planets[0])
 
         // Do any additional setup after loading the view.
     }
